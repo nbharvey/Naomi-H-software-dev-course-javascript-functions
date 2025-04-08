@@ -36,6 +36,10 @@ reusable functions that solve specific tasks. This activity encourages:
 // 3. Capitalize the role if needed.
 // 4. Return the result.
 
+function attendee(name, role) {
+    return `Name: ${name}, Role: ${role}`
+}
+console.log(attendee("Alice", "Speaker"));
 
 // ============================================
 // 🧩 Task 2: Calculate Event Cost
@@ -51,6 +55,17 @@ reusable functions that solve specific tasks. This activity encourages:
 // 3. If so, apply a 10% discount.
 // 4. Return the final total.
 
+function calculateEventCost(attendees, cost) {
+    let totalCostOfAttendees = attendees * cost;
+    if (attendees > 100) {
+        return `The 10% discount was applied, and the total cost is now (${totalCostOfAttendees * .9})`;
+        //return cost * .9;
+    } else {
+        return `There is no discount at this time, the total cost is ${totalCostOfAttendees}`;
+    }
+}
+console.log(calculateEventCost(101, 10));
+
 
 // ============================================
 // 🧩 Task 3: Validate Email
@@ -64,6 +79,10 @@ reusable functions that solve specific tasks. This activity encourages:
 // 1. Check if the string includes both "@" and ".".
 // 2. Return true or false accordingly.
 
+function isValidEmail(email) {
+    return email.includes("@") && email.includes(".");
+}
+console.log(isValidEmail("random@gmail.com"));
 
 // ============================================
 // 🧠 Collaborative Steps
@@ -89,3 +108,22 @@ reusable functions that solve specific tasks. This activity encourages:
 // - Explain how your team approached the design and testing process
 
 // ✅ Bonus: Can you extend any of the functions to be more flexible or reusable?
+
+/*
+Task 2 Bonus:
+function calculateEventCost(attendees, cost) {
+    if (attendees > 100) {
+        if (attendees > 100) {
+            let discount = .9; //10% discount
+            let totalTicketCost = cost * discount;
+            let totalCostOfAttendees = attendees * totalTicketCost;
+
+            return `The discount was applied, and the total cost is now (${totalCostOfAttendees})`;
+
+        }
+    } else {
+        return `There is no discount at this time, the total cost is ${totalCostOfAttendees}`;
+    }
+}
+console.log(calculateEventCost(101, 10));
+*/
