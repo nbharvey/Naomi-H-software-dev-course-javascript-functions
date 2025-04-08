@@ -26,16 +26,20 @@ This activity reinforces:
 5️⃣ Test the refactored script to ensure it produces the same output as the original.
 
 ---
-*/
+
 
 // ============================================
 // ❌ Original Code (Before Refactoring)
 // ============================================
 
 // Script 1 - Greeting multiple users
-console.log("Welcome, Alice!");
-console.log("Welcome, Bob!");
-console.log("Welcome, Charlie!");
+function welcomeUser(name) {
+   return `Welcome, ${name}!` ;
+}
+console.log(welcomeUser("Alice"));
+console.log(welcomeUser("Bob"));
+console.log(welcomeUser("Charlie"));
+
 
 // Script 2 - Sum calculation
 let num1 = 5, num2 = 10;
@@ -52,7 +56,15 @@ console.log("Names in the list:");
 for (let i = 0; i < names.length; i++) {
     console.log(names[i]);
 }
-
+//Expected output:
+//Welcome, Bob!
+//Welcome, Charlie!
+//The sum of 5 and 10 is 15
+//The product of 5 and 10 is 50
+//Names in the list:
+//Alice
+//Bob
+//Charlie
 /*
 ===========================================
 🛠️ Steps for Refactoring
@@ -72,3 +84,43 @@ for (let i = 0; i < names.length; i++) {
 */
 
 // ✅ Your refactored code goes below this line!
+// Script 1 - Greeting multiple users
+function welcomeUser(name) {
+   console.log(`Welcome, ${name}!`);
+}
+welcomeUser("Alice");
+welcomeUser("Bob");
+welcomeUser("Charlie");
+
+// Script 2 - Sum calculation
+function add(a, b) {
+   return a + b;
+}
+
+let numA = 5;
+let numB = 10;
+function printSum(numA, numB) {
+   console.log(`The sum of ${numA} and ${numB} is ${add(numA, numB)}`);
+}
+printSum(numA, numB);
+
+// Script 3 - Product calculation
+function multiply(c, d) {
+   return c * d;
+};
+let num1 = 5;
+let num2 = 10;
+function printProduct(num1, num2) {
+console.log(`The product of 5 and 10 is ${multiply(5, 10)}`);
+}
+printProduct(num1, num2);
+
+// Script 4 - Print names from a list
+function printNames(arr) {
+   console.log("Names in the list: ");
+   for (let i = 0; i < arr.length; i++) {
+      console.log(arr[i]);
+   }
+}
+let names = ["Alice", "Bob", "Charlie"];
+printNames(names);
